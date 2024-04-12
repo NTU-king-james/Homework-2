@@ -1,7 +1,7 @@
 def find_arbitrage_from_tokenB(liquidity, fee_percent=0.3):
     # Calculate the fee multiplier
     fee_multiplier = 1 - fee_percent / 100
-    print(f"fee_multiplier: {fee_multiplier}") 
+    # print(f"fee_multiplier: {fee_multiplier}") 
     # Create a graph from the liquidity data
     graph = {}
     for (token1, token2), (num1, num2) in liquidity.items():
