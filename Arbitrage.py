@@ -34,6 +34,7 @@ def find_arbitrage_from_tokenB(liquidity, fee_percent=0.3):
     if 'tokenB' in graph:
         dfs('tokenB', set(), 5.0, [])
 
+    
 # Liquidity dictionary as provided
 liquidity = {
     ("tokenA", "tokenB"): (17, 10),
@@ -49,3 +50,5 @@ liquidity = {
 }
 
 find_arbitrage_from_tokenB(liquidity)
+
+
