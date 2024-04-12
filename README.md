@@ -54,7 +54,7 @@ _mint(address(0), MINIMUM_LIQUIDITY); // permanently lock the first MINIMUM_LIQU
 Investigate the minting function in the UniswapV2Pair contract. When depositing tokens (not for the first time), liquidity can only be obtained using a specific formula. What is the intention behind this?
 
 ``` solidity
-Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSupply) / _reserve1)
+liquidity = Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSupply) / _reserve1);
 ```
 
 維持 token pair 比例：通過這個公式計算的 liquidity，可以確保新提供的 token 從現在的 token pair 比例進行增加。避免因新增 liquidity 而引起的 token 比例的不合理波動。
