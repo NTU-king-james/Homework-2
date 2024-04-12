@@ -15,7 +15,7 @@ def find_arbitrage_from_tokenB(liquidity, fee_percent=0.3):
 
     def dfs(current_token, visited, balance, path):
         if current_token in visited:
-            if current_token == 'tokenB' and balance > 5.0 and len(path) > 1:
+            if current_token == 'tokenB' and balance > 20.0 and len(path) > 1:
                 # Found a profitable cycle
                 path_str = '->'.join(path + ['tokenB'])
                 print(f"path: {path_str}, tokenB balance={balance:.6f}")
