@@ -82,6 +82,21 @@ contract Arbitrage is Test {
         /**
          * Please add your solution above
          */
+        address[] memory path = new address[](4);
+        path[0] = address(tokenB);
+        path[1] = address(tokenA);
+        path[2] = address(tokenD);
+        path[3] = address(tokenB);
+        path[4] = address(tokenA);
+        path[5] = address(tokenD);
+        path[6] = address(tokenB);
+        uint[] memory amounts = router.swapExactTokensForTokens(
+            5 ether,       // 输入的tokenB数量
+            1,             // 预计的最小tokenB输出数量，实际中应该是你计算的最小值
+            path,          // 交换路径
+            arbitrager,    // 接收最终代币的地址
+            block.timestamp + 1 days  // 交易截止时间
+        );
         uint256 tokensAfter = tokenB.balanceOf(arbitrager);
         assertGt(tokensAfter, 20 ether);
         console.log("After Arbitrage tokenB Balance: %s", tokensAfter);
