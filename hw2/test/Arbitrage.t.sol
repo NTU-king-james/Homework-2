@@ -87,9 +87,7 @@ contract Arbitrage is Test {
         path[1] = address(tokenA);
         path[2] = address(tokenD);
         path[3] = address(tokenB);
-        path[4] = address(tokenA);
-        path[5] = address(tokenD);
-        path[6] = address(tokenB);
+
         uint[] memory amounts = router.swapExactTokensForTokens(
             5 ether,       // 输入的tokenB数量
             1,             // 预计的最小tokenB输出数量，实际中应该是你计算的最小值
