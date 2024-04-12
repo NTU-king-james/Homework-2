@@ -92,7 +92,7 @@ contract Arbitrage is Test {
         path[6] = address(tokenB);
         uint[] memory amounts = router.swapExactTokensForTokens(
             5 ether,       // 输入的tokenB数量
-            1,             // 预计的最小tokenB输出数量，实际中应该是你计算的最小值
+            0.01,             // 预计的最小tokenB输出数量，实际中应该是你计算的最小值
             path,          // 交换路径
             arbitrager,    // 接收最终代币的地址
             block.timestamp + 1 days  // 交易截止时间
