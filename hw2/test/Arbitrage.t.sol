@@ -82,7 +82,7 @@ contract Arbitrage is Test {
         /**
          * Please add your solution above
          */
-        address[] memory path = new address[](7);
+        address[] memory path = new address[](4);
         path[0] = address(tokenB);
         path[1] = address(tokenA);
         path[2] = address(tokenD);
