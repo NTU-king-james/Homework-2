@@ -63,7 +63,7 @@ liquidity = Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSu
 
 What is a sandwich attack, and how might it impact you when initiating a swap?
 
-Sandwich attack 是針對 DEX 用戶執行交易的前置攻擊手法，特別是那些交易尚未被確認的交易，攻擊者先以較高的 fee 發起一個與 victim 相同的交易(front running)，確保他的交易先被處理，從而提高 victim 要購買的資產價格。在 victim 的交易執行後，攻擊者再執行一筆賣出交易，從而在提高的價格上獲利。
+Sandwich attack 是一種 front running attack，特別是尚未被確認的交易，攻擊者先以較高的 fee 發起一個與 victim 相同的交易，確保他的交易先被處理，從而提高 victim 要購買的資產價格。在 victim 的交易執行後，攻擊者再執行一筆賣出交易，從而在提高的價格上獲利。
 
 victim 可能會因此需要支付更高的價格來完成交易，或者在交易完成後發現自己的交易價格不合理。
 
