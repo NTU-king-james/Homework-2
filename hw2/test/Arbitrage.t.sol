@@ -97,6 +97,7 @@ contract Arbitrage is Test {
             arbitrager,    // 接收最终代币的地址
             block.timestamp + 1 days  // 交易截止时间
         );
+        console.log("Amounts: bonbonobnob");
         uint256 tokensAfter = tokenB.balanceOf(arbitrager);
         assertGt(tokensAfter, 20 ether);
         console.log("After Arbitrage tokenB Balance: %s", tokensAfter);
